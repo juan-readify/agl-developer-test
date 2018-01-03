@@ -6,13 +6,12 @@ using Newtonsoft.Json;
 
 namespace PersonsApi
 {
-  public class Client : IClient
+  public class PersonsClient : IPersonsClient
   {
     private readonly HttpClient _httpClient;
 
-    public Client(Uri baseAddress)
+    public PersonsClient(Uri baseAddress)
     {
-
       _httpClient = new HttpClient
       {
         BaseAddress = baseAddress

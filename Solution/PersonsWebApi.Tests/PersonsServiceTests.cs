@@ -12,7 +12,7 @@ namespace PersonsWebApi.Tests
 {
   public class PersonsServiceTests
   {
-    private readonly Mock<IClient> _mockClient;
+    private readonly Mock<IPersonsClient> _mockClient;
     private readonly PersonsService _target;
 
     private readonly Person[] _testData = new[]
@@ -43,7 +43,7 @@ namespace PersonsWebApi.Tests
 
     public PersonsServiceTests()
     {
-      _mockClient = new Mock<IClient>();
+      _mockClient = new Mock<IPersonsClient>();
 
       _mockClient.Setup(x => x.GetPersonsAsync()).Returns(Task.FromResult(_testData));
 

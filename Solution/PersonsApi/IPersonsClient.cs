@@ -2,7 +2,7 @@
 
 namespace PersonsApi
 {
-  public interface IClient
+  public interface IPersonsClient
   {
     Task<Person[]> GetPersonsAsync();
   }

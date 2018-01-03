@@ -3,16 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonsWebApi", "PersonsApi\PersonsWebApi.csproj", "{2D7E5431-7414-497D-BEBA-8107053DAF42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonsWebApi", "PersonsWebApi\PersonsWebApi.csproj", "{2D7E5431-7414-497D-BEBA-8107053DAF42}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonsWebApi.Tests", "PersonsApi.Tests\PersonsWebApi.Tests.csproj", "{890319F4-6421-4D89-A70C-3148D360C896}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonsWebApi.Tests", "PersonsWebApi.Tests\PersonsWebApi.Tests.csproj", "{890319F4-6421-4D89-A70C-3148D360C896}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{A5B7F840-C85E-430C-94ED-C341768AA0E5}"
 	ProjectSection(SolutionItems) = preProject
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonsApi", "PersonApiClient\PersonsApi.csproj", "{9F69B5F0-033A-4C61-82A8-2BFF34133CD9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonsApi", "PersonsApi\PersonsApi.csproj", "{9F69B5F0-033A-4C61-82A8-2BFF34133CD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

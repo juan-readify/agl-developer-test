@@ -25,7 +25,7 @@ namespace PersonsWebApi.Controllers
     }
 
     [HttpGet]
-    [Route("byownergender")]
+    [Route("catsbyownergender")]
     public async Task<IEnumerable<CatsByOwnerGender>> GetCatsByOwnerGenderAsync()
     {
       return await _personsService.GetCatsByOwnerGenderAsync();

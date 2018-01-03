@@ -7,6 +7,7 @@ namespace PersonsApi
   {
     [JsonConverter(typeof(StringEnumConverter))]
     public PetType Type { get; set; }
+
     public string Name { get; set; }
   }
 }
