@@ -1,17 +1,16 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Microsoft.Extensions.CommandLineUtils;
 
 namespace ConsoleClient
 {
-  class Program
+  internal class Program
   {
     private static readonly CommandLineApplication App;
 
 
     static Program()
     {
-      App = new CommandLineApplication { Name = "PC" };
+      App = new CommandLineApplication {Name = "PC"};
       App.HelpOption("-?|-h|--help");
 
       App.OnExecute(() =>
@@ -27,12 +26,10 @@ namespace ConsoleClient
       });
 
       App.Command("cats", command =>
-        {
-          command.Description = "Show the list of cat names grouped by the gender of their owner.";
-          command.OnExecute(() => ExecuteCommand(CatsCommandHandler));
-
-        });
-
+      {
+        command.Description = "Show the list of cat names grouped by the gender of their owner.";
+        command.OnExecute(() => ExecuteCommand(CatsCommandHandler));
+      });
     }
 
     private static int ExecuteCommand(Action command)
@@ -52,18 +49,18 @@ namespace ConsoleClient
 
     private static void PersonsCommandHandler()
     {
-      var client = new PersonosApiClient();
+      var client = new PersonsApiClient();
       Console.Write(client.GetPersons());
     }
 
     private static void CatsCommandHandler()
     {
-      var client = new PersonosApiClient();
+      var client = new PersonsApiClient();
       Console.Write(client.GetCats());
     }
 
 
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
       App.Execute(args);
     }

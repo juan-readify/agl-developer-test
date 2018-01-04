@@ -1,23 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Reflection.PortableExecutable;
-using System.Text;
-using Newtonsoft.Json;
 
 namespace ConsoleClient
 {
-  class PersonosApiClient
+  internal class PersonsApiClient
 
   {
-    private readonly Uri ApiBaseUri = new Uri("http://localhost:53539/api/");
+    private readonly Uri _apiBaseUri = new Uri("http://localhost:53539/api/");
 
     private HttpClient GetClient()
     {
       var client = new HttpClient
       {
-        BaseAddress = ApiBaseUri
+        BaseAddress = _apiBaseUri
       };
 
       client.DefaultRequestHeaders.Accept.Clear();
@@ -31,7 +27,6 @@ namespace ConsoleClient
       {
         return client.GetStringAsync("person").Result;
       }
-
     }
 
     public string GetCats()
@@ -40,8 +35,6 @@ namespace ConsoleClient
       {
         return client.GetStringAsync("person/catsbyownergender").Result;
       }
-
     }
-
   }
 }
