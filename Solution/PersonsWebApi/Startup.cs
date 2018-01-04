@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using PersonsApi;
+using PersonsWebApi.Middleware;
 using PersonsWebApi.Services;
 
 namespace PersonsWebApi
@@ -29,10 +31,12 @@ namespace PersonsWebApi
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
     {
       if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
 
+      loggerFactory.AddFile($"Logs/personsWebApi-{DateTime.Now:hh_mm_ss}.log");
+      app.UseMiddleware<ErrorHandlingMiddleware>();
       app.UseMvc();
     }
   }
